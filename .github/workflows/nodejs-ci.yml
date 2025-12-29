@@ -22,7 +22,7 @@ jobs:
           for d in services/*; do
             if [ -f "$d/package.json" ]; then
               echo "Running tests in $d"
-              (cd $d && npm ci 2>/dev/null || true)
-              (cd $d && npm test || true)
+              (cd $d && npm ci)
+              (cd $d && npm test)
             fi
           done

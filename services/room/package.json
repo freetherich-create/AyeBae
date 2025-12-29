@@ -4,6 +4,9 @@
   "private": true,
   "main": "src/sync-sim.js",
   "scripts": {
-    "test": "node --test"
+    "test": "mocha --exit"
+  },
+  "devDependencies": {
+    "mocha": "^10.2.0"
   }
 }

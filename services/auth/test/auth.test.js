@@ -1,7 +1,7 @@
-import assert from 'assert';
-import http from 'http';
-import fetch from 'node-fetch';
-import './setup.js';
+const assert = require('assert');
+const http = require('http');
+require('./setup.js');
+// Note: use global fetch available in Node 18+ for tests
 
 // basic smoke tests using the running local server started in setup
 const base = 'http://localhost:3001';

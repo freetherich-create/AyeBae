@@ -1,12 +1,14 @@
-import { spawn } from 'child_process';
-import process from 'process';
+const { spawn } = require('child_process');
+const process = require('process');
+const path = require('path');
 let child;
 
 before(function (done) {
-  this.timeout(5000);
-  child = spawn('node', ['src/index.js'], { env: { ...process.env, PORT: '3001' }, stdio: 'inherit' });
+  this.timeout(10000);
+  const serviceRoot = path.resolve(__dirname, '..');
+  child = spawn('node', ['src/index.js'], { cwd: serviceRoot, env: { ...process.env, PORT: '3001' }, stdio: 'inherit' });
   // give server time to start
-  setTimeout(done, 1200);
+  setTimeout(done, 2000);
 });
 
 after(function () {
