@@ -15,7 +15,9 @@ Project specifics:
 Common commands:
 - Install deps: `npm ci` at repo root (or per-service where appropriate).
 - Run tests: `npm run test` (add service-specific tests inside each service folder).
-- Local webhook testing: use `stripe listen` and forward to `services/payments`.
+- Per-service setup: run `npm install` inside each `services/<name>` on first use to generate a `package-lock.json`; CI uses `npm ci` and expects lockfiles.
+- Tests use `mocha` as the test runner for services; run `npm test` inside the service directory.
+- Local webhook testing: use `stripe listen` and forward to `services/payments`. 
 
 Integration notes:
 - OAuth flows: use `SPOTIFY_CLIENT_*` and `HULU_CLIENT_*` env vars. Respect provider rate limits.
