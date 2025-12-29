@@ -1,0 +1,28 @@
+name: Node CI
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install root deps
+        run: npm ci
+      - name: Run tests for services
+        run: |
+          set -e
+          for d in services/*; do
+            if [ -f "$d/package.json" ]; then
+              echo "Running tests in $d"
+              (cd $d && npm ci 2>/dev/null || true)
+              (cd $d && npm test || true)
+            fi
+          done

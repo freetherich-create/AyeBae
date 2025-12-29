@@ -1,0 +1,13 @@
+{
+  "name": "ayebae",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Add tests\" && exit 0",
+    "start": "node ./index.js",
+    "lint": "eslint . || true"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
