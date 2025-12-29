@@ -5,7 +5,10 @@
   "scripts": {
     "test": "echo \"Add tests\" && exit 0",
     "start": "node ./index.js",
-    "lint": "eslint . || true"
+    "lint": "eslint . || true",
+    "bootstrap": "powershell -ExecutionPolicy Bypass -File scripts/setup_local_dev.ps1",
+    "test:all": "powershell -ExecutionPolicy Bypass -File scripts/run_tests.ps1",
+    "create:repo": "powershell -ExecutionPolicy Bypass -File scripts/create_repo.ps1 -Visibility public"
   },
   "engines": {
     "node": ">=18"

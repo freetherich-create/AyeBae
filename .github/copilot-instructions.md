@@ -16,6 +16,10 @@ Common commands:
 - Install deps: `npm ci` at repo root (or per-service where appropriate).
 - Run tests: `npm run test` (add service-specific tests inside each service folder).
 - Per-service setup: run `npm install` inside each `services/<name>` on first use to generate a `package-lock.json`; CI uses `npm ci` and expects lockfiles.
+- Automation: use the scripts in `scripts/` for common tasks:
+  - `npm run bootstrap` — install per-service dependencies
+  - `npm run test:all` — run tests across all services
+  - `npm run create:repo` — create the GitHub repo and push (requires `gh` CLI and authentication)
 - Tests use `mocha` as the test runner for services; run `npm test` inside the service directory.
 - Local webhook testing: use `stripe listen` and forward to `services/payments`. 
 
