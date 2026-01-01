@@ -4,3 +4,41 @@ node_modules/
 dist/
 coverage/
 .DS_Store
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+logs/
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Editor directories and files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS files
+Thumbs.db
+
+# Build artifacts
+build/
+out/
+
+# Database
+*.sqlite
+*.sqlite3
+*.db
+
+# Test coverage
+.nyc_output/
+
+# Docker
+docker-compose.override.yml
