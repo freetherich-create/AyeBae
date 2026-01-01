@@ -19,4 +19,4 @@ function score(a, b, weights = { interests: 0.5, sameSchool: 0.2, recentActivity
   return +s.toFixed(4);
 }
 
-module.exports = { score };
+export { score };
