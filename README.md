@@ -1,5 +1,13 @@
 # AyeBae — Social & Shared Experience App
 
+![Build Status](https://github.com/freetherich-create/AyeBae/workflows/Node.js%20CI/badge.svg)
+![License](https://img.shields.io/github/license/freetherich-create/AyeBae)
+![Contributors](https://img.shields.io/github/contributors/freetherich-create/AyeBae)
+![Issues](https://img.shields.io/github/issues/freetherich-create/AyeBae)
+![Pull Requests](https://img.shields.io/github/issues-pr/freetherich-create/AyeBae)
+![Last Commit](https://img.shields.io/github/last-commit/freetherich-create/AyeBae)
+![Stars](https://img.shields.io/github/stars/freetherich-create/AyeBae?style=social)
+
 > A microservices-based matching app for shared experiences: watch parties, music listening, dating, gifting, and subscriptions.
 
 ## 🎯 Overview
