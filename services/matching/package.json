@@ -4,7 +4,8 @@
   "private": true,
   "main": "src/score.js",
   "scripts": {
-    "test": "mocha --exit"
+    "test": "mocha --exit",
+    "dev": "nodemon src/index.js"
   },
   "devDependencies": {
     "mocha": "^10.2.0"
