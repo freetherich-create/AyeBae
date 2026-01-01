@@ -12,3 +12,41 @@ services:
     image: redis:7
     ports:
       - 6379:6379
+
+  auth:
+    build: ./services/auth
+    ports:
+      - "3001:3001"
+    environment:
+      - PORT=3001
+      - DATABASE_URL=postgresql://postgres:postgres@postgres:5432/ayebae
+      - JWT_SECRET=${JWT_SECRET:-dev-secret-key}
+      - REDIS_URL=redis://redis:6379
+    depends_on:
+      - postgres
+      - redis
+
+  matching:
+    build: ./services/matching
+    ports:
+      - "3002:3002"
+    environment:
+      - PORT=3002
+    
+  room:
+    build: ./services/room
+    ports:
+      - "3003:3003"
+    environment:
+      - PORT=3003
+      - CORS_ORIGIN=*
+  
+  payments:
+    build: ./services/payments
+    ports:
+      - "3004:3004"
+    environment:
+      - PORT=3004
+      - DATABASE_URL=postgresql://postgres:postgres@postgres:5432/ayebae
+    depends_on:
+      - postgres
